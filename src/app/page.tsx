@@ -1,6 +1,9 @@
 import { headers } from 'next/headers';
 import StatusLabel, { Status } from './components/status-label';
 import AddCompanyButton from './components/add-company-button';
+import ServerComponent from './components/server-components';
+import ClientComponent from './components/client-component';
+import ServerComponentCopy from './components/server-components-copy';
 
 export default function Home() {
   console.log(headers());
@@ -8,6 +11,10 @@ export default function Home() {
     <main>
       <h1 className="text-xl">Home Page {new Date().toTimeString()}</h1>
       <AddCompanyButton />
+      <ServerComponent />
+      <ClientComponent>
+        <ServerComponentCopy />
+      </ClientComponent>
     </main>
   );
 }
