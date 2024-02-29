@@ -15,6 +15,7 @@ export interface StatusLabelProps {
 }
 
 function StatusLabel({ children, status, disabled }: StatusLabelProps) {
+  console.log(process.env.CRM_NEXT_JS_SECRET_KEY);
   return (
     <div
       className={clsx(
