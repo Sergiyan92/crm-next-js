@@ -6,6 +6,7 @@ interface LayoutProps {
 }
 
 const Layout = ({ children }: LayoutProps) => {
+  console.log('rendering');
   return (
     <>
       <Sidebar />
