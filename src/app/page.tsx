@@ -1,13 +1,10 @@
-import { headers } from 'next/headers';
-import StatusLabel, { Status } from './components/status-label';
-import MagicButton from './components/magic-button';
+import AddCompanyButton from '@/app/components/add-company-button';
 
 export default function Home() {
-  console.log(headers());
   return (
     <main>
-      <h1 className="text-xl">Home Page</h1>
-      <MagicButton />
+      <h1 className="text-xl">Home page</h1>
+      <AddCompanyButton />
     </main>
   );
 }

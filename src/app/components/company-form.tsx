@@ -3,7 +3,7 @@
 import React from 'react';
 import { Form, Formik } from 'formik';
 import Button from '@/app/components/button';
-import InputField from '@/app/components/input-filed';
+import InputField from '@/app/components/input-field';
 import LogoUploader from '@/app/components/logo-uploader';
 
 export type CompanyFieldValues = {

@@ -2,9 +2,9 @@
 
 import React from 'react';
 
-export interface GlobalErrorPageProps {}
+export interface GlobalErrorProps {}
 
-const GlobalErrorPage = ({}: GlobalErrorPageProps) => {
+export default function GlobalError({}: GlobalErrorProps) {
   return (
     <html>
       <body>
@@ -14,6 +14,4 @@ const GlobalErrorPage = ({}: GlobalErrorPageProps) => {
       </body>
     </html>
   );
-};
-
-export default GlobalErrorPage;
+}
