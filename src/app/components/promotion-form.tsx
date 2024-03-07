@@ -40,22 +40,23 @@ export default function PromotionForm({
 
   const { mutateAsync, isPending } = useMutation({
     mutationFn: createPromotion,
-    onSuccess: (data) => {
-      queryClient.setQueryData(['promotions', companyId], (oldData) => {
-        if (oldData) {
-          return oldData.concat(data);
-        }
+    onSuccess: () => {
+      queryClient.invalidateQueries({
+        queryKey: ['promotions', companyId],
       });
 
-      queryClient.setQueryData(['promotions'], (oldData) => {
-        if (oldData) {
-          return oldData.concat(data);
-        }
+      queryClient.invalidateQueries({
+        queryKey: ['promotions'],
+        exact: true,
       });
     },
   });
 
   const handleSubmit = async (values: PromotionFieldValues) => {
+    if (!company) {
+      return;
+    }
+
     await mutateAsync({
       ...values,
       discount: Number(values.discount) || 0,
